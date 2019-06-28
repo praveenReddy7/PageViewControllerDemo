@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0F454022C5D9440038F638 /* CLTabBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F453F22C5D9440038F638 /* CLTabBarPageViewController.swift */; };
 		AC76715022C4AE90002EACC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76714F22C4AE90002EACC7 /* AppDelegate.swift */; };
 		AC76715222C4AE90002EACC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76715122C4AE90002EACC7 /* ViewController.swift */; };
 		AC76715522C4AE90002EACC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC76715322C4AE90002EACC7 /* Main.storyboard */; };
 		AC76715722C4AE92002EACC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC76715622C4AE92002EACC7 /* Assets.xcassets */; };
 		AC76715A22C4AE92002EACC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC76715822C4AE92002EACC7 /* LaunchScreen.storyboard */; };
+		AC76716222C4B059002EACC7 /* CLPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76716122C4B059002EACC7 /* CLPageViewController.swift */; };
+		AC76716422C4C3B0002EACC7 /* CLLIstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76716322C4C3B0002EACC7 /* CLLIstViewController.swift */; };
+		AC76716622C4E5DC002EACC7 /* CLSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76716522C4E5DC002EACC7 /* CLSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC0F453F22C5D9440038F638 /* CLTabBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTabBarPageViewController.swift; sourceTree = "<group>"; };
 		AC76714C22C4AE90002EACC7 /* PageViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC76714F22C4AE90002EACC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC76715122C4AE90002EACC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		AC76715622C4AE92002EACC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC76715922C4AE92002EACC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC76715B22C4AE92002EACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC76716122C4B059002EACC7 /* CLPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPageViewController.swift; sourceTree = "<group>"; };
+		AC76716322C4C3B0002EACC7 /* CLLIstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLIstViewController.swift; sourceTree = "<group>"; };
+		AC76716522C4E5DC002EACC7 /* CLSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLSegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				AC76714F22C4AE90002EACC7 /* AppDelegate.swift */,
 				AC76715122C4AE90002EACC7 /* ViewController.swift */,
+				AC76716322C4C3B0002EACC7 /* CLLIstViewController.swift */,
+				AC0F453F22C5D9440038F638 /* CLTabBarPageViewController.swift */,
+				AC76716122C4B059002EACC7 /* CLPageViewController.swift */,
+				AC76716522C4E5DC002EACC7 /* CLSegmentedControl.swift */,
 				AC76715322C4AE90002EACC7 /* Main.storyboard */,
 				AC76715622C4AE92002EACC7 /* Assets.xcassets */,
 				AC76715822C4AE92002EACC7 /* LaunchScreen.storyboard */,
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC76716622C4E5DC002EACC7 /* CLSegmentedControl.swift in Sources */,
 				AC76715222C4AE90002EACC7 /* ViewController.swift in Sources */,
+				AC0F454022C5D9440038F638 /* CLTabBarPageViewController.swift in Sources */,
 				AC76715022C4AE90002EACC7 /* AppDelegate.swift in Sources */,
+				AC76716222C4B059002EACC7 /* CLPageViewController.swift in Sources */,
+				AC76716422C4C3B0002EACC7 /* CLLIstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PF5TQ3AQ6W;
 				INFOPLIST_FILE = PageViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PF5TQ3AQ6W;
 				INFOPLIST_FILE = PageViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
