@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.title = "TabBarPageView"
         
         let tabBarPageCtl = CLTabBarPageViewController(pages: titles)
         tabBarPageCtl.tabBarPageDelegate = self
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
         tabBarPageCtl.didMove(toParent: self)
         
         tabBarPageCtl.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tabBarPageCtl.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        tabBarPageCtl.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tabBarPageCtl.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tabBarPageCtl.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 40).isActive = true
         
@@ -30,16 +32,15 @@ class ViewController: UIViewController {
                                                             direction: .forward,
                                                             animated: true,
                                                             completion: nil)
-        
     }
     
 }
 
 extension ViewController: ITabBarPageViewCtlDelegate {
-    func didSelectTabBar(_ tabBarPage: CLTabBarPageViewController, at indexPath: IndexPath) {
-        let previousIndex = tabBarPage.segmentedControl.selectedIndex
+    func didSelectTabBar(_ tabBarPage: CLTabBarPageViewController, at indexPath: IndexPath, navigationDirection: UIPageViewController.NavigationDirection) {
         tabBarPage.pageViewController.setViewControllers([pageContentViewController(at: indexPath.row)],
-                                                         direction: (indexPath > previousIndex) ? .forward : .reverse, animated: true,
+                                                         direction: navigationDirection,
+                                                         animated: true,
                                                          completion: nil)
     }
     

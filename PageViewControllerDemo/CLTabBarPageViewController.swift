@@ -7,7 +7,7 @@
 import UIKit
 
 protocol ITabBarPageViewCtlDelegate {
-    func didSelectTabBar(_ tabBarPage: CLTabBarPageViewController, at indexPath: IndexPath)
+    func didSelectTabBar(_ tabBarPage: CLTabBarPageViewController, at indexPath: IndexPath, navigationDirection: UIPageViewController.NavigationDirection)
     func setPageViewController(_ pageViewCtl: CLPageViewController, at index: Int) -> UIViewController?
 }
 
@@ -30,9 +30,9 @@ class CLTabBarPageViewController: UIViewController {
         segmentedControl.segmentDelegate = self
         view.addSubview(segmentedControl)
         
-        segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         segmentedControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         pageViewController = CLPageViewController(pageCount: pages.count)
@@ -43,7 +43,7 @@ class CLTabBarPageViewController: UIViewController {
         pageViewController.didMove(toParent: self)
         
         pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        pageViewController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        pageViewController.view.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pageViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 40).isActive = true
     }
@@ -57,7 +57,10 @@ class CLTabBarPageViewController: UIViewController {
 
 extension CLTabBarPageViewController: ISegmentDelegate {
     func didSelectSegmentedControl(_ segmentedControl: CLSegmentedControl, at indexPath: IndexPath) {
-        tabBarPageDelegate?.didSelectTabBar(self, at: indexPath)
+        let previousIndex = self.segmentedControl.selectedIndex
+        tabBarPageDelegate?.didSelectTabBar(self,
+                                            at: indexPath,
+                                            navigationDirection: (indexPath > previousIndex) ? .forward : .reverse)
     }
 }
 

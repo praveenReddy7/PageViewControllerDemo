@@ -3,8 +3,6 @@
 //  PageViewControllerDemo
 //
 //  Created by praveen on 6/27/19.
-//  Copyright © 2019 focussoftnet. All rights reserved.
-//
 
 import UIKit
 
@@ -15,7 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
         return true
     }
 
