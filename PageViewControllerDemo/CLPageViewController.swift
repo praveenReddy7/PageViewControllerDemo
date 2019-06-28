@@ -27,15 +27,6 @@ class CLPageViewController: UIPageViewController {
     }
     
     /*
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if pageViewDelegate != nil {
-            self.setViewControllers([pageViewDelegate!.setViewController(at: 0)], direction: .forward, animated: true, completion: nil)
-        }
-    }
-    
-    
-    
     func setViewController(at index: Int) -> CLListViewController {
         if (pageCount == 0) || (index >= pageCount) {
             return CLListViewController()
@@ -77,10 +68,6 @@ extension CLPageViewController: UIPageViewControllerDelegate {
         return pageCount
     }
     
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        return 0
-//    }
-    
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         let pg = pendingViewControllers.first as! IPageController
         pageViewDelegate?.didMovePageViewController(self, to: pg.pageIndex)
@@ -96,7 +83,3 @@ extension CLPageViewController: UIPageViewControllerDelegate {
 protocol IPageController {
     var pageIndex: Int { get set }
 }
-
-//class CLPageContentController: UIViewController, IPageController {
-//    var pageIndex: Int = 0
-//}
